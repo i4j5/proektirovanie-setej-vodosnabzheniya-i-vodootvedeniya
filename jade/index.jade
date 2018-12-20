@@ -36,7 +36,7 @@ html(lang="ru")
 head
   meta(charset="UTF-8")
   meta(name="viewport" content="width=device-width, initial-scale=1")
-  title Баланс водопотребления и водоотведения от 1000 руб 
+  title Проектирование сетей водоснабжения и водоотведения
 
   link(rel="icon" href="img/favicon.ico" type="image/x-icon")
   link(rel="shortcut icon" href="img/favicon.ico" type="image/x-icon")
@@ -78,8 +78,12 @@ body.page
     .container
       .offer 
         .offer__text.start-animate
-          |Баланс водопотребления и водоотведения <br>от 1000 руб
-        .offer__action.order.start-animate(style="animation-delay: .2s") Записаться на консультацию 
+          |Закажи <b>СОГЛАСОВАННЫЙ</b> проект водоснабжения и канализации
+          br
+          |индивидуального жилого строения всего за <b>10 000</b> руб.
+          br
+          span Сроки изготовления проекта от 14 дней
+        .offer__action.order.start-animate(style="animation-delay: .2s") Заказать проект
 
 
   .container
@@ -91,25 +95,62 @@ body.page
           .triggers__text Опыт работы<br>более 6 лет
         +b.col._lg_2._md_2._sm_6._xs_12
           .triggers__items
-          img(src='img/triggers__img5.png').triggers__img
-          .triggers__text Имеем право участия<br>в конкурсах, СРО
+          img(src='img/triggers__img6.png').triggers__img
+          .triggers__text Цены ниже<br>среднерыночных<br>на 7-12%
         +b.col._lg_3._md_3._sm_6._xs_12
           .triggers__items
-          img(src='img/triggers__img4.png').triggers__img
-          .triggers__text Изготовление балансов<br>от 2-х часов!
+          img(src='img/triggers__img5.png').triggers__img
+          .triggers__text Имеем право участия<br>в конкурсах, СРО
         +b.col._lg_4._lg-offset_1._md_4._sm_12._xs_12
           .about ООО «БК Инвент» — общество профессионалов, использующих в своей практике инновационный подход к решению как проектных, так и инженерно-строительных задач.
 
-  +b.textt
+  .textt
     .container
-      +e.title Для чего он требуется?
-      |- Объект только планируется к подключению водоснабжения и/или водоотведения.
-      br
-      |- Объект поменял свой статус – жилое на нежилое, поменялся вид деятельности и т.д.
-      br
-      |- В случае перезаключения договора между собственником объекта и Водоканалом.
-      br
-      |- По истечению срока годности баланса (не более 5 лет).
+      .textt__title Этапы проектирования
+      +b.tabs
+        +e.item._active
+          +e.title
+            +e.number 1
+            |Топографическая съемка
+            +e.arrow
+          +e.text(style="display: block;")
+            p Если нет топографической съемки, то инженер-геодезист выезжает на объект и создает её. Топографическая съемка — это поле для проектирования. На ней указаны все подземные и надземные коммуникации, а также объект к которому проектируется сеть.
+        +e.item
+          +e.title
+            +e.number 2
+            |Обследование объекта
+            +e.arrow
+          +e.text
+            p Инженер выезжает на объект, производит замеры длин и глубин, а также снимает всю необходимую для проектирования информацию.
+        +e.item
+          +e.title
+            +e.number 3
+            |Формирование проектно-сметной документации
+            +e.arrow
+          +e.text
+            p В пакет чертежей наружных сетей водоснабжения и канализации входят:
+            ul
+              li Общие данные
+              li План и профиль сетей водопровода и канализации,
+              li Таблицы и схемы колодцев
+              li Схема устройства водомерного узла
+              li Линия разграничения ответственности
+              li Спецификация оборудования
+            p В пакет чертежей внутренней системы водоснабжения и канализации входят:
+            ul
+              li Пояснительная записка
+              li Поэтажный план разводки сетей водопровода и канализации
+              li Схема устройства водомерного узла
+
+        +e.item
+          +e.title
+            +e.number 4
+            |Согласование проекта
+            +e.arrow
+          +e.text
+            p Результатом согласования проекта является наличие на проектной документации 15 печатей, в том числе печать Департамента дорог, Департамента по охране окружающей среды, Департамента архитектуры и градостроительства.
+
+
 
 
   .stock
@@ -120,7 +161,9 @@ body.page
           .stock__title
             span Внимание 
             | акция!
-          .stock__text Только до <span>31</span> декабря <span> СКИДКА 15%</span>
+          .stock__text Только до <span>31</span> декабря <span> СКИДКА</span>
+          .stock__price.stock__price_old 13 000 руб.
+          .stock__price 10 000 руб.
           +b.timer
             #timer
               +e.action До конца акции осталось:
@@ -136,7 +179,7 @@ body.page
             //-   +e.text минут
         +b.col._lg_5._md_6._sm_12._xs_12
           .wall
-            .wall__title Заполните форму,чтобы<br>получить скидку 15%
+            .wall__title Заполните форму,чтобы<br>получить скидку
             .form
               form.ajax
                 input(placeholder='Введите Ваше имя' name='name').input.input_type_name
@@ -148,7 +191,7 @@ body.page
                 input(type='hidden', name='utm_source', value="<?echo $utm_source?>")
                 input(type='hidden', name='utm_medium', value="<?echo $utm_medium?>")
                 input(type='hidden', name='utm_content', value="<?echo $utm_content?>")
-                input(type='hidden', name='order', value='Баланс водопотребления и водоотведения. Cкидка 15%')
+                input(type='hidden', name='order', value='Проектирование сетей водоснабжения и водоотведения. Cкидка')
                 input(type='submit' value='Отправить').form__btn
 
   .container
@@ -172,31 +215,32 @@ body.page
             +e.icon
 
   .container
+    .title Проектируем сети на следующих объектах
     .row
       +b.col._lg_3._md_3._sm_6._xs_12
         +b.product
           +e.title Частные строения ИЖС
-          +e.price._old От 1 300 руб.
-          +e.price От 1 100 руб.
-          +e.btn(data-product="Баланс водопотребления и водоотведения. Частные строения ИЖС") Заказать баланс
+          //- +e.price._old От 1 300 руб.
+          //- +e.price От 1 100 руб.
+          +e.btn(data-product="Проектирование сетей водоснабжения и водоотведения. Частные строения ИЖС. Узнать стоимость") Узнать стоимость
       +b.col._lg_3._md_3._sm_6._xs_12
         +b.product
           +e.title Коммерческие объекты
-          +e.price._old От 2 100 руб.
-          +e.price От 1 780 руб.
-          +e.btn(data-product="Баланс водопотребления и водоотведения. Коммерческие объекты") Заказать баланс
+          //- +e.price._old От 2 100 руб.
+          //- +e.price От 1 780 руб.
+          +e.btn(data-product="Проектирование сетей водоснабжения и водоотведения. Коммерческие объекты. Узнать стоимость") Узнать стоимость
       +b.col._lg_3._md_3._sm_6._xs_12
         +b.product
           +e.title Муниципальные объекты
-          +e.price._old От 5 000 руб.
-          +e.price От 4 250 руб.
-          +e.btn(data-product="Баланс водопотребления и водоотведения. Муниципальные объекты") Заказать баланс
+          //- +e.price._old От 5 000 руб.
+          //- +e.price От 4 250 руб.
+          +e.btn(data-product="Проектирование сетей водоснабжения и водоотведения. Муниципальные объекты. Узнать стоимость") Узнать стоимость
       +b.col._lg_3._md_3._sm_6._xs_12
         +b.product
           +e.title Промышленные объекты
-          +e.price._old От 11 00 руб.
-          +e.price От 9 350 руб.
-          +e.btn(data-product="Баланс водопотребления и водоотведения. Промышленные объекты") Заказать баланс
+          //- +e.price._old От 11 00 руб.
+          //- +e.price От 9 350 руб.
+          +e.btn(data-product="Проектирование сетей водоснабжения и водоотведения. Промышленные объекты. Узнать стоимость") Узнать стоимость
 
   .scheme
     .container
@@ -226,24 +270,24 @@ body.page
         +b.col._lg_3._md_3._sm_6._xs_12
           .scheme__item
             .scheme__n 5
-            .scheme__title Изготовление<br>баланса
-            .scheme__text Занимает 1 рабочий день с момента предоставления информационной справки
+            .scheme__title Изготовление<br>проекта
+            .scheme__text Занимает от 14 рабочих дней с момента предоставления информационной справки
         +b.col._lg_3._md_3._sm_6._xs_12
           .scheme__item
             .scheme__n 6
-            .scheme__title Выдача<br>баланса
+            .scheme__title Выдача<br>проекта
 
             .scheme__text Происходит на основании подписанных актов выполненных работ и обмена подписанных документов
         +b.col._lg_3._md_3._sm_6._xs_12
           .scheme__item
             .scheme__n 7
             .scheme__title Оплата<br>по договору
-            .scheme__textИ только после того, как вы получили баланс на руки, вы оплачиваете выставленный счет
-        +b.col._lg_3._md_3._sm_6._xs_12
-          .scheme__item
-            .scheme__n 8
-            .scheme__title Гарантия
-            .scheme__text Мы даем гарантию, что Водоканал ваш баланс примет. Вы даете нам обратную связь, когда это произошло!
+            .scheme__textИ только после того, как вы получили проект на руки, вы оплачиваете выставленный счет
+        //- +b.col._lg_3._md_3._sm_6._xs_12
+        //-   .scheme__item
+        //-     .scheme__n 8
+        //-     .scheme__title Гарантия
+        //-     .scheme__text Мы даем гарантию, что Водоканал ваш баланс примет. Вы даете нам обратную связь, когда это произошло!
 
   .questions
     .questions__title Остались вопросы?
@@ -281,10 +325,31 @@ body.page
                 input(type='hidden', name='utm_source', value="<?echo $utm_source?>")
                 input(type='hidden', name='utm_medium', value="<?echo $utm_medium?>")
                 input(type='hidden', name='utm_content', value="<?echo $utm_content?>")
-                input(type='hidden', name='order', value='Баланс водопотребления и водоотведения')#product-input
-                input(type='submit' value='Заказать').form__btn
+                input(type='hidden', name='order', value='Проектирование сетей водоснабжения и водоотведения')#product-input
+                input(type='submit' value='Отправить').form__btn
 
   .modal#modal__order
+    .modal__wrapper
+        .modal__dialog
+            .close.modal__close
+            .modal__title Наши менеджеры свяжутся с Вами в ближайшее время
+            +b.form
+              form.ajax
+                input(placeholder='Введите Ваше имя' name='name').input.input_type_name
+                input(placeholder='Введите Ваш телефон' name='phone').input.input_type_phone
+                input(placeholder='Введите Ваш E-mail' name='email').input.input_type_email
+                input(type='hidden', name='url', value="<?echo $url?>")
+                input(type='hidden', name='utm', value="<?echo $utm?>")
+                input(type='hidden', name='utm_term', value="<?echo $utm_term?>")
+                input(type='hidden', name='utm_campaign', value="<?echo $utm_campaign?>")
+                input(type='hidden', name='utm_source', value="<?echo $utm_source?>")
+                input(type='hidden', name='utm_medium', value="<?echo $utm_medium?>")
+                input(type='hidden', name='utm_content', value="<?echo $utm_content?>")
+                input(type='hidden', name='order', value='Проектирование сетей водоснабжения и водоотведения. Заказ проекта')
+                input(type='submit' value='Отправить').form__btn
+
+
+  .modal#modal__question
     .modal__wrapper
         .modal__dialog
             .close.modal__close
@@ -301,7 +366,7 @@ body.page
                 input(type='hidden', name='utm_source', value="<?echo $utm_source?>")
                 input(type='hidden', name='utm_medium', value="<?echo $utm_medium?>")
                 input(type='hidden', name='utm_content', value="<?echo $utm_content?>")
-                input(type='hidden', name='order', value='Баланс водопотребления и водоотведения. Консультация')
+                input(type='hidden', name='order', value='Проектирование сетей водоснабжения и водоотведения. Консультация')
                 input(type='submit' value='Отправить').form__btn
 
   .modal#modal__ok
@@ -328,8 +393,8 @@ body.page
     (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
     m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
     (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-    ym(51637940, "init", {
-    id:51637940,
+    ym(51650636, "init", {
+    id:51650636,
     clickmap:true,
     trackLinks:true,
     accurateTrackBounce:true,
@@ -337,4 +402,4 @@ body.page
     });
   noscript
     div
-      img(src='https://mc.yandex.ru/watch/51637940', style='position:absolute; left:-9999px;', alt='')
+      img(src='https://mc.yandex.ru/watch/51650636', style='position:absolute; left:-9999px;', alt='')

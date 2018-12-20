@@ -133,9 +133,11 @@
     width 100%
     // padding 200px 0
     text-align center
-    
-    background #63b1ff url('../img/header-img.png')no-repeat bottom right 15vw
-    padding 100px 0
+    background #63b1ff url('../img/header-img.png') no-repeat bottom right 10vw
+    background-size 350px
+    @media (min-width 1000px)
+        background-size auto
+    padding 80px 0
 
 .offer
     text-align left !important
@@ -160,15 +162,19 @@
         font-weight 500
         @media (min-width 640px)
             font-size 30px
+            font-weight 300
         font-size 20px
         color #fff
         line-height 1.8em
         font-weight 300
         //-shadow 0px 0px 10px rgba(7, 7, 7, 0.7)
-        text-transform uppercase
+        //text-transform uppercase
         //width 100%
+        font-weight 400
+        b
+            font-weight 400
         span
-            color #e93935
+            font-size 0.6em
     &__action
         @media (min-width 1000px)
             font-size 16px
@@ -253,7 +259,7 @@
     &__title
         padding-top 50px
         font-size 20px
-        margin-bottom 10px
+        margin-bottom 20px
         position relative
         &:before
             content ' '
@@ -625,9 +631,23 @@
         font-size 30px
         margin-bottom 20px
         @media (min-width 990px)
-            margin-top 100px
+            margin-top 80px
     &__text
         font-size 18px
+    &__price
+        font-size 22px
+        color #e91a1a
+        font-weight 400
+        margin-top 20px
+        display inline-block
+        &_old
+            text-decoration line-through
+            color #000
+            font-weight 300
+            margin-right 15px
+            font-size 18px
+            
+            
         
 .timer
     margin-bottom 40px 
@@ -670,3 +690,60 @@
         
 #doc
     margin-bottom 80px
+    
+.tabs
+    max-width 690px
+    //margin auto
+    ul, ol
+        padding-left 30px
+    &__item
+        margin-bottom 10px
+        &_active
+            .tabs__arrow
+                transform rotate(180deg) !important
+            .progress-bar __pace
+                transition none
+                //transition-delay 0.5s
+    &__title
+        color #fff
+        line-height 1.2em
+        font-size 16px
+        background #477be6
+        border-radius 5px
+        padding 10px 20px 10px 50px
+        position relative
+        cursor pointer
+        z-index 10
+    &__number
+        font-size 16px
+        text-align center
+        line-height 24px
+        color #e1e3ed
+        width 24px
+        height 24px
+        background #2b5ab3
+        border-radius 30px
+        position absolute
+        top calc(50% - 12px)
+        left 10px
+        transition all .5s linear
+    &__arrow
+        background url('../img/tabs__number.png') no-repeat center
+        height 13px
+        width 24px
+        position absolute
+        top calc(50% - 7px)
+        right 10px
+        transition all .5s linear
+    &__text
+        font-size 14px 
+        line-height 1.8em
+        color #282828
+        border-radius 5px
+        border 1px solid #e0e0e0
+        padding 20px 20px 15px 20px
+        position relative
+        top -10px
+        margin-bottom -10px
+        display none 
+            
