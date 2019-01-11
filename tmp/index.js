@@ -60,9 +60,9 @@ $(document).ready(function () {
 		});
 	});
 
-	var now = new Date("December 31, 2018");
+	var now = new Date();
 
-	var endTS = now.getTime();
+	var endTS = now.getTime() + 100176000;
 
 	setInterval(function () {
 		now = new Date();
@@ -87,8 +87,8 @@ $(document).ready(function () {
 			if (RemainsFullDays < 10) {
 				RemainsFullDays = "0" + RemainsFullDays;
 			};
-			var str = '<div class=\'timer__el\'><div class=\'timer__numeral\'>' + RemainsFullDays + '</div><div class=\'timer__text\'>\u0414\u043D\u0435\u0439</div></div>';
-			str = str + ('<div class=\'timer__el\'><div class=\'timer__numeral\'>' + RemainsFullHours + '</div><div class=\'timer__text\'>\u0427\u0430\u0441\u043E\u0432</div></div>');
+			// let str = `<div class='timer__el'><div class='timer__numeral'>${RemainsFullDays}</div><div class='timer__text'>Дней</div></div>`
+			var str = '<div class=\'timer__el\'><div class=\'timer__numeral\'>' + RemainsFullHours + '</div><div class=\'timer__text\'>\u0427\u0430\u0441\u043E\u0432</div></div>';
 			str = str + ('<div class=\'timer__el\'><div class=\'timer__numeral\'>' + RemainsMinutes + '</div><div class=\'timer__text\'>\u041C\u0438\u043D\u0443\u0442\u044B</div></div>');
 			str = str + ('<div class=\'timer__el\'><div class=\'timer__numeral\'>' + lastSec + '</div><div class=\'timer__text\'>\u0421\u0435\u043A\u0443\u043D\u0434\u044B</div></div>');
 			$('.digits').html(str);
@@ -112,6 +112,10 @@ $(document).ready(function () {
 	$('.order').click(function (event) {
 		yatarget = 'advice';
 		$('#modal__order').openModal();
+	});
+
+	$('.download').click(function (event) {
+		$('#modal__download').openModal();
 	});
 
 	$('#question').click(function (event) {
@@ -172,7 +176,7 @@ $(document).ready(function () {
 
 					if (download) {
 						yatarget = 'doc';
-						$('#modal__download').openModal();
+						$('#modal__download_ok').openModal();
 					} else {
 						$('#modal__ok').openModal();
 					}

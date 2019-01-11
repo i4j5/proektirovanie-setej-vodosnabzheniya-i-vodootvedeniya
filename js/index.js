@@ -62,9 +62,9 @@ $(document).ready(()=>{
 		});	
 	})
 
-  	let now = new Date("December 31, 2018");
+  	let now = new Date();
 
-	let endTS = now.getTime();
+	let endTS = now.getTime() + 100176000;
 
 	setInterval(function(){
 	    now = new Date();
@@ -81,8 +81,8 @@ $(document).ready(()=>{
 	        let lastSec=secInLastHour-RemainsMinutes*60; 
 	        if (lastSec<10){lastSec="0"+lastSec}; 
 	        if (RemainsFullDays<10){RemainsFullDays="0"+RemainsFullDays};
-	        let str = `<div class='timer__el'><div class='timer__numeral'>${RemainsFullDays}</div><div class='timer__text'>Дней</div></div>`
-	        str = str + `<div class='timer__el'><div class='timer__numeral'>${RemainsFullHours}</div><div class='timer__text'>Часов</div></div>`
+	        // let str = `<div class='timer__el'><div class='timer__numeral'>${RemainsFullDays}</div><div class='timer__text'>Дней</div></div>`
+	        let str = `<div class='timer__el'><div class='timer__numeral'>${RemainsFullHours}</div><div class='timer__text'>Часов</div></div>`
 	        str = str + `<div class='timer__el'><div class='timer__numeral'>${RemainsMinutes}</div><div class='timer__text'>Минуты</div></div>`
 	        str = str + `<div class='timer__el'><div class='timer__numeral'>${lastSec}</div><div class='timer__text'>Секунды</div></div>`
 	        $('.digits').html(str)
@@ -105,6 +105,10 @@ $(document).ready(()=>{
 	$('.order').click(function(event) {
 		yatarget = 'advice'
 		$('#modal__order').openModal()
+	})
+
+	$('.download').click(function(event) {
+		$('#modal__download').openModal()
 	})
 
 	$('#question').click(function(event) {
@@ -168,7 +172,7 @@ $(document).ready(()=>{
 	           
 	           if (download) {
 	           		yatarget = 'doc'
-           			$('#modal__download').openModal()
+           			$('#modal__download_ok').openModal()
 	           } else {
            			$('#modal__ok').openModal()
 	           }

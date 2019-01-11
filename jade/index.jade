@@ -78,16 +78,37 @@ body.page
     .container
       .offer 
         .offer__text.start-animate
-          |Закажи <b>СОГЛАСОВАННЫЙ</b> проект водоснабжения и канализации
+          |Закажи <b>СОГЛАСОВАННЫЙ</b> проект 
           br
-          |индивидуального жилого строения всего за <b>10 000</b> руб.
+          |водоснабжения и канализации
           br
-          span Сроки изготовления проекта от 14 дней
+          |ИЖС всего за <b>12 500</b> руб.
+          br
+          span Сроки изготовления проекта от 1 месяца
         .offer__action.order.start-animate(style="animation-delay: .2s") Заказать проект
 
+  .formm
+    .container
+      .formm__title
+        | Получить бесплатную консультацию проектировщика
+      .form
+        form.ajax(novalidate='novalidate')
+          input.input.input_type_name(placeholder='Введите Ваше имя', name='name')
+          input.input.input_type_phone(placeholder='Введите Ваш телефон', name='phone')
+          input.input.input_type_email(placeholder='Введите Ваш E-mail', name='email')
+          input(type='hidden', name='url', value='lp.bk-invent.ru/pasport-vodnogo-hozyajstva/index.php')
+          input(type='hidden', name='utm', value='')
+          input(type='hidden', name='utm_term', value='-')
+          input(type='hidden', name='utm_campaign', value='-')
+          input(type='hidden', name='utm_source', value='-')
+          input(type='hidden', name='utm_medium', value='-')
+          input(type='hidden', name='utm_content', value='-')
+          input(type='hidden', name='order', value='Проектирование сетей водоснабжения и водоотведения. Выезд инженера')
+          input.form__btn(type='submit', value='Отправить')
 
-  .container
-    .triggers
+
+  .triggers
+    .container
       .row
         +b.col._lg_2._md_2._sm_6._xs_12
           .triggers__items
@@ -151,7 +172,11 @@ body.page
             p Результатом согласования проекта является наличие на проектной документации 15 печатей, в том числе печать Департамента дорог, Департамента по охране окружающей среды, Департамента архитектуры и градостроительства.
 
 
+  .textt
+    .container
+      .textt__title <br><br>Для изготовления согласованной проектно-рабочей документации<br>по водоснабжению и/или водоотведению Вам необходимо<br>предоставить следующие документы: 
 
+      .btn.download(style="background: #e91a1a;") Скачать перечень документов, которые нужны от Вас
 
   .stock
     .container
@@ -159,11 +184,13 @@ body.page
         +b.col._lg_5._md_5._sm_12._xs_12._lg-offset_1
             
           .stock__title
-            span Внимание 
-            | акция!
-          .stock__text Только до <span>31</span> декабря <span> СКИДКА</span>
-          .stock__price.stock__price_old 13 000 руб.
-          .stock__price 10 000 руб.
+            span Внимание!
+
+          .stock__text <span>С декабря 2018г.</span> АО “Ростовводоканал” <span>ОБЯЗАТЕЛЬНО</span> требует предоставлять к проекту наружных сетей водоснабжения и/или канализации <span style="color: #e91a1a;">сведения о внутреннем инженерном оборудовании, о сетях инженерно-технического обеспечения (внутридомовой проект).</span>
+
+          .stock__text
+            span 
+              i При заказе наружного проекта водоснабжения и/или канализации внутридомовой проект бонусом!!!
           +b.timer
             #timer
               +e.action До конца акции осталось:
@@ -179,7 +206,7 @@ body.page
             //-   +e.text минут
         +b.col._lg_5._md_6._sm_12._xs_12
           .wall
-            .wall__title Заполните форму,чтобы<br>получить скидку
+            .wall__title Заполните форму, <br>чтобы получить внутридомовой проект бонусом
             .form
               form.ajax
                 input(placeholder='Введите Ваше имя' name='name').input.input_type_name
@@ -267,7 +294,7 @@ body.page
             .scheme__n 4
             .scheme__title Контракт
             .scheme__text Предоставляем вам полный пакет документов и заключаем контракт
-        +b.col._lg_3._md_3._sm_6._xs_12
+        +b.col._lg_3._md_3._sm_6._xs_12._lg-offset_1._md-offset_1
           .scheme__item
             .scheme__n 5
             .scheme__title Изготовление<br>проекта
@@ -369,6 +396,35 @@ body.page
                 input(type='hidden', name='order', value='Проектирование сетей водоснабжения и водоотведения. Консультация')
                 input(type='submit' value='Отправить').form__btn
 
+
+  .modal#modal__download
+    .modal__wrapper
+        .modal__dialog
+            .close.modal__close
+            .modal__title Скачать перечень документов
+            +b.form
+              form.ajax
+                input(placeholder='Введите Ваше имя' name='name').input.input_type_name
+                input(placeholder='Введите Ваш телефон' name='phone').input.input_type_phone
+                input(placeholder='Введите Ваш E-mail' name='email').input.input_type_email
+                input(type='hidden', name='url', value="<?echo $url?>")
+                input(type='hidden', name='utm', value="<?echo $utm?>")
+                input(type='hidden', name='utm_term', value="<?echo $utm_term?>")
+                input(type='hidden', name='utm_campaign', value="<?echo $utm_campaign?>")
+                input(type='hidden', name='utm_source', value="<?echo $utm_source?>")
+                input(type='hidden', name='utm_medium', value="<?echo $utm_medium?>")
+                input(type='hidden', name='utm_content', value="<?echo $utm_content?>")
+                input(type="hidden" name="download" value="...")
+                input(type='hidden', name='order', value='Проектирование сетей водоснабжения и водоотведения')
+                input(type='submit' value='Отправить').form__btn
+
+  .modal#modal__download_ok
+      .modal__wrapper
+          .modal__dialog
+              .close.modal__close
+              .modal__title Документы можно скачать по ссылке
+              a(href="http://lp.bk-invent.ru/doc4.pdf" target="_blank").btn Скачать
+
   .modal#modal__ok
     .modal__wrapper
         .modal__dialog
@@ -382,7 +438,7 @@ body.page
             img(src="")#zoom__img
 
   script(src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript")
-  //build:js js/all.js
+  //-build:js js/all.js
   script(src="node_modules/jquery/dist/jquery.min.js")
   script(src="node_modules/waypoints/lib/jquery.waypoints.min.js")
   //- script(src="node_modules/bxslider/dist/jquery.bxslider.min.js")

@@ -87,13 +87,34 @@ $utm =  $_SERVER["QUERY_STRING"];
   <div class="header">
     <div class="container">
       <div class="offer"> 
-        <div class="offer__text start-animate">Закажи <b>СОГЛАСОВАННЫЙ</b> проект водоснабжения и канализации<br/>индивидуального жилого строения всего за <b>10 000</b> руб.<br/><span>Сроки изготовления проекта от 14 дней</span></div>
+        <div class="offer__text start-animate">Закажи <b>СОГЛАСОВАННЫЙ</b> проект <br/>водоснабжения и канализации<br/>ИЖС всего за <b>12 500</b> руб.<br/><span>Сроки изготовления проекта от 1 месяца</span></div>
         <div style="animation-delay: .2s" class="offer__action order start-animate">Заказать проект</div>
       </div>
     </div>
   </div>
-  <div class="container">
-    <div class="triggers">
+  <div class="formm">
+    <div class="container">
+      <div class="formm__title">Получить бесплатную консультацию проектировщика</div>
+      <div class="form">
+        <form novalidate="novalidate" class="ajax">
+          <input placeholder="Введите Ваше имя" name="name" class="input input_type_name"/>
+          <input placeholder="Введите Ваш телефон" name="phone" class="input input_type_phone"/>
+          <input placeholder="Введите Ваш E-mail" name="email" class="input input_type_email"/>
+          <input type="hidden" name="url" value="lp.bk-invent.ru/pasport-vodnogo-hozyajstva/index.php"/>
+          <input type="hidden" name="utm" value=""/>
+          <input type="hidden" name="utm_term" value="-"/>
+          <input type="hidden" name="utm_campaign" value="-"/>
+          <input type="hidden" name="utm_source" value="-"/>
+          <input type="hidden" name="utm_medium" value="-"/>
+          <input type="hidden" name="utm_content" value="-"/>
+          <input type="hidden" name="order" value="Проектирование сетей водоснабжения и водоотведения. Выезд инженера"/>
+          <input type="submit" value="Отправить" class="form__btn"/>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="triggers">
+    <div class="container">
       <div class="row">
         <div class="col col_lg_2 col_md_2 col_sm_6 col_xs_12">
           <div class="triggers__items"></div><img src="img/triggers__img1.png" class="triggers__img"/>
@@ -178,14 +199,19 @@ $utm =  $_SERVER["QUERY_STRING"];
       </div>
     </div>
   </div>
+  <div class="textt">
+    <div class="container">
+      <div class="textt__title"><br><br>Для изготовления согласованной проектно-рабочей документации<br>по водоснабжению и/или водоотведению Вам необходимо<br>предоставить следующие документы: </div>
+      <div style="background: #e91a1a;" class="btn download">Скачать перечень документов, которые нужны от Вас</div>
+    </div>
+  </div>
   <div class="stock">
     <div class="container">
       <div class="row">
         <div class="col col_lg_5 col_md_5 col_sm_12 col_xs_12 col_lg-offset_1">
-          <div class="stock__title"><span>Внимание </span>акция!</div>
-          <div class="stock__text">Только до <span>31</span> декабря <span> СКИДКА</span></div>
-          <div class="stock__price stock__price_old">13 000 руб.</div>
-          <div class="stock__price">10 000 руб.</div>
+          <div class="stock__title"><span>Внимание!</span></div>
+          <div class="stock__text"><span>С декабря 2018г.</span> АО “Ростовводоканал” <span>ОБЯЗАТЕЛЬНО</span> требует предоставлять к проекту наружных сетей водоснабжения и/или канализации <span style="color: #e91a1a;">сведения о внутреннем инженерном оборудовании, о сетях инженерно-технического обеспечения (внутридомовой проект).</span></div>
+          <div class="stock__text"><span> <i>При заказе наружного проекта водоснабжения и/или канализации внутридомовой проект бонусом!!!</i></span></div>
           <div class="timer">
             <div id="timer">
               <div class="timer__action">До конца акции осталось:
@@ -196,7 +222,7 @@ $utm =  $_SERVER["QUERY_STRING"];
         </div>
         <div class="col col_lg_5 col_md_6 col_sm_12 col_xs_12">
           <div class="wall">
-            <div class="wall__title">Заполните форму,чтобы<br>получить скидку</div>
+            <div class="wall__title">Заполните форму, <br>чтобы получить внутридомовой проект бонусом</div>
             <div class="form">
               <form class="ajax">
                 <input placeholder="Введите Ваше имя" name="name" class="input input_type_name"/>
@@ -316,7 +342,7 @@ $utm =  $_SERVER["QUERY_STRING"];
             <div class="scheme__text">Предоставляем вам полный пакет документов и заключаем контракт</div>
           </div>
         </div>
-        <div class="col col_lg_3 col_md_3 col_sm_6 col_xs_12">
+        <div class="col col_lg_3 col_md_3 col_sm_6 col_xs_12 col_lg-offset_1 col_md-offset_1">
           <div class="scheme__item">
             <div class="scheme__n">5</div>
             <div class="scheme__title">Изготовление<br>проекта</div>
@@ -439,6 +465,39 @@ $utm =  $_SERVER["QUERY_STRING"];
       </div>
     </div>
   </div>
+  <div id="modal__download" class="modal">
+    <div class="modal__wrapper">
+      <div class="modal__dialog">
+        <div class="close modal__close"></div>
+        <div class="modal__title">Скачать перечень документов</div>
+        <div class="form">
+          <form class="ajax">
+            <input placeholder="Введите Ваше имя" name="name" class="input input_type_name"/>
+            <input placeholder="Введите Ваш телефон" name="phone" class="input input_type_phone"/>
+            <input placeholder="Введите Ваш E-mail" name="email" class="input input_type_email"/>
+            <input type="hidden" name="url" value="&lt;?echo $url?&gt;"/>
+            <input type="hidden" name="utm" value="&lt;?echo $utm?&gt;"/>
+            <input type="hidden" name="utm_term" value="&lt;?echo $utm_term?&gt;"/>
+            <input type="hidden" name="utm_campaign" value="&lt;?echo $utm_campaign?&gt;"/>
+            <input type="hidden" name="utm_source" value="&lt;?echo $utm_source?&gt;"/>
+            <input type="hidden" name="utm_medium" value="&lt;?echo $utm_medium?&gt;"/>
+            <input type="hidden" name="utm_content" value="&lt;?echo $utm_content?&gt;"/>
+            <input type="hidden" name="download" value="..."/>
+            <input type="hidden" name="order" value="Проектирование сетей водоснабжения и водоотведения"/>
+            <input type="submit" value="Отправить" class="form__btn"/>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="modal__download_ok" class="modal">
+    <div class="modal__wrapper">
+      <div class="modal__dialog">
+        <div class="close modal__close"></div>
+        <div class="modal__title">Документы можно скачать по ссылке</div><a href="http://lp.bk-invent.ru/doc4.pdf" target="_blank" class="btn">Скачать</a>
+      </div>
+    </div>
+  </div>
   <div id="modal__ok" class="modal">
     <div class="modal__wrapper">
       <div class="modal__dialog">
@@ -455,7 +514,6 @@ $utm =  $_SERVER["QUERY_STRING"];
     </div>
   </div>
   <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
-  <!--build:js js/all.js-->
   <script src="node_modules/jquery/dist/jquery.min.js"></script>
   <script src="node_modules/waypoints/lib/jquery.waypoints.min.js"></script>
   <script src="node_modules/jquery-validation/dist/jquery.validate.min.js"></script>
