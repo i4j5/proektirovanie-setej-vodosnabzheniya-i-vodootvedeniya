@@ -96,13 +96,13 @@ body.page
           input.input.input_type_name(placeholder='Введите Ваше имя', name='name')
           input.input.input_type_phone(placeholder='Введите Ваш телефон', name='phone')
           input.input.input_type_email(placeholder='Введите Ваш E-mail', name='email')
-          input(type='hidden', name='url', value='lp.bk-invent.ru/pasport-vodnogo-hozyajstva/index.php')
-          input(type='hidden', name='utm', value='')
-          input(type='hidden', name='utm_term', value='-')
-          input(type='hidden', name='utm_campaign', value='-')
-          input(type='hidden', name='utm_source', value='-')
-          input(type='hidden', name='utm_medium', value='-')
-          input(type='hidden', name='utm_content', value='-')
+          input(type='hidden', name='url', value="<?echo $url?>")
+          input(type='hidden', name='utm', value="<?echo $utm?>")
+          input(type='hidden', name='utm_term', value="<?echo $utm_term?>")
+          input(type='hidden', name='utm_campaign', value="<?echo $utm_campaign?>")
+          input(type='hidden', name='utm_source', value="<?echo $utm_source?>")
+          input(type='hidden', name='utm_medium', value="<?echo $utm_medium?>")
+          input(type='hidden', name='utm_content', value="<?echo $utm_content?>")
           input(type='hidden', name='order', value='Проектирование сетей водоснабжения и водоотведения. Выезд инженера')
           input.form__btn(type='submit', value='Отправить')
 
@@ -438,7 +438,7 @@ body.page
             img(src="")#zoom__img
 
   script(src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript")
-  //-build:js js/all.js
+  //build:js js/all.js
   script(src="node_modules/jquery/dist/jquery.min.js")
   script(src="node_modules/waypoints/lib/jquery.waypoints.min.js")
   //- script(src="node_modules/bxslider/dist/jquery.bxslider.min.js")

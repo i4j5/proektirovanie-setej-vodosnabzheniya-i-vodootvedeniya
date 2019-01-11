@@ -100,13 +100,13 @@ $utm =  $_SERVER["QUERY_STRING"];
           <input placeholder="Введите Ваше имя" name="name" class="input input_type_name"/>
           <input placeholder="Введите Ваш телефон" name="phone" class="input input_type_phone"/>
           <input placeholder="Введите Ваш E-mail" name="email" class="input input_type_email"/>
-          <input type="hidden" name="url" value="lp.bk-invent.ru/pasport-vodnogo-hozyajstva/index.php"/>
-          <input type="hidden" name="utm" value=""/>
-          <input type="hidden" name="utm_term" value="-"/>
-          <input type="hidden" name="utm_campaign" value="-"/>
-          <input type="hidden" name="utm_source" value="-"/>
-          <input type="hidden" name="utm_medium" value="-"/>
-          <input type="hidden" name="utm_content" value="-"/>
+          <input type="hidden" name="url" value="&lt;?echo $url?&gt;"/>
+          <input type="hidden" name="utm" value="&lt;?echo $utm?&gt;"/>
+          <input type="hidden" name="utm_term" value="&lt;?echo $utm_term?&gt;"/>
+          <input type="hidden" name="utm_campaign" value="&lt;?echo $utm_campaign?&gt;"/>
+          <input type="hidden" name="utm_source" value="&lt;?echo $utm_source?&gt;"/>
+          <input type="hidden" name="utm_medium" value="&lt;?echo $utm_medium?&gt;"/>
+          <input type="hidden" name="utm_content" value="&lt;?echo $utm_content?&gt;"/>
           <input type="hidden" name="order" value="Проектирование сетей водоснабжения и водоотведения. Выезд инженера"/>
           <input type="submit" value="Отправить" class="form__btn"/>
         </form>
@@ -514,6 +514,7 @@ $utm =  $_SERVER["QUERY_STRING"];
     </div>
   </div>
   <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+  <!--build:js js/all.js-->
   <script src="node_modules/jquery/dist/jquery.min.js"></script>
   <script src="node_modules/waypoints/lib/jquery.waypoints.min.js"></script>
   <script src="node_modules/jquery-validation/dist/jquery.validate.min.js"></script>
