@@ -46,7 +46,7 @@
     "bemto.jade": "^1.0.3",
     "bxslider": "^4.2.14",
     "jquery": "^3.3.1",
-    "jquery-validation": "^1.19.0",
+    "jquery-validation": "^1.19.4",
     "waypoints": "^4.0.1"
   }
 }
